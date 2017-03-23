@@ -1,13 +1,13 @@
 {
    "swagger":"2.0",
    "info":{
-      "description":"iconnectel.com API description. See example http://ilivesite11dev.iconnectel.com/_DefaultForm/",
+      "description":"iConnecTel iVoice Callback API Description. See example connector http://ilivesite11dev.iconnectel.com/_DefaultForm/",
       "version":"1.0.0",
-      "title":"API for callback forms",
+      "title":"iVoice Callback API",
       "termsOfService":"http://swagger.io/terms/",
       "contact":{
-         "email":"dmoreland@iconnectel.com",
-         "name":"Iconnectel"         
+         "email":"support@iconnectel.com",
+         "name":"iConnecTel"         
       },
       "license":{
          "name":"",
@@ -377,7 +377,7 @@
       }
    },
    "externalDocs":{
-      "description":"Find out more about Iconnectel",
-      "url":"http://iconnectel.com"
+      "description":"Find out more about iConnecTel Services",
+      "url":"http://www.iConnecTel.com"
    }
 }
