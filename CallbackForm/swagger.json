@@ -1,7 +1,7 @@
 {
    "swagger":"2.0",
    "info":{
-      "description":"iConnecTel iVoice Callback API Description. See example connector http://ilivesite11dev.iconnectel.com/_DefaultForm/",
+      "description":"iConnecTel iVoice Callback API Description. See example connector http://swagger.iconnectel.com/callbackpublic/CallbackForm",
       "version":"1.0.0",
       "title":"iVoice Callback API",
       "termsOfService":"http://swagger.io/terms/",

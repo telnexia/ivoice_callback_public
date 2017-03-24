@@ -87,7 +87,7 @@ class iVoiceAPI
     
     public static function getSettings($key) {
         if (self::$settings == null) {
-            self::$settings = include_once($this->settingFile === false ? __DIR__.'/settings.ini.php' : $this->settingFile);
+            self::$settings = include_once(__DIR__.'/settings.ini.php');
         }
         
         return (isset(self::$settings[$key])) ? self::$settings[$key] : false;        
