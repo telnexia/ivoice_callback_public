@@ -15,7 +15,7 @@
       }
    },
    "host":"ilivesite2dev.iconnectel.com",
-   "basePath":"/v2",
+   "basePath":"/",
    "tags":[
       {
          "name":"callback",
@@ -170,6 +170,7 @@
                 "200": {
                     "description": "Scheduled information",
                     "schema": {
+                    	"$ref": "#/definitions/Callback" 
                     }
                 }
             }
@@ -206,7 +207,27 @@
          }         
       }
    },   
-   "definitions":{
+   "definitions":{      
+      "Callback":{
+         "type":"object",
+         "properties":{
+            "error":{
+               "type":"boolean",
+               "description":"Was there any errors processing query"
+            },
+            "fields":{
+               "type":"array", 
+               "items": {
+	              "type": "string"
+	           },               
+               "description":"Holds field names of missing fields. This field is present only if error is true"
+            },
+            "msg":{
+               "type": "string",
+               "description": "Success or error message"               
+            }
+         }
+      },
       "Schedule":{
          "type":"object",
          "properties":{
@@ -254,6 +275,67 @@
             }
          }
       },
+      "Schedule.timelistdays":{
+         "type":"object",
+         "properties":{
+            "1":{
+               "type": "array",
+               "items": {
+                    "$ref": "#\/definitions\/Schedule.list.timelist"
+               },
+               "description": "Array of possible calltime for a day"
+            },
+            "2":{
+               "type": "array",
+               "items": {
+                    "$ref": "#\/definitions\/Schedule.list.timelist"
+               },
+               "description": "Array of possible calltime for a day"
+            },
+            "3":{
+               "type": "array",
+               "items": {
+                    "$ref": "#\/definitions\/Schedule.list.timelist"
+               },
+               "description": "Array of possible calltime for a day"
+            },
+            "4":{
+               "type": "array",
+               "items": {
+                    "$ref": "#\/definitions\/Schedule.list.timelist"
+               },
+               "description": "Array of possible calltime for a day"
+            },
+            "6":{
+               "type": "array",
+               "items": {
+                    "$ref": "#\/definitions\/Schedule.list.timelist"
+               },
+               "description": "Array of possible calltime for a day"
+            },
+            "7":{
+               "type": "array",
+               "items": {
+                    "$ref": "#\/definitions\/Schedule.list.timelist"
+               },
+               "description": "Array of possible calltime for a day"
+            },
+            "today":{
+               "type": "array",
+               "items": {
+                    "$ref": "#\/definitions\/Schedule.list.timelist"
+               },
+               "description": "Array of possible calltime for a day"
+            },
+            "tomorrow":{
+               "type": "array",
+               "items": {
+                    "$ref": "#\/definitions\/Schedule.list.timelist"
+               },
+               "description": "Array of possible calltime for a day"
+            }
+         }
+      },
       "Schedule.list":{
          "type":"object",
          "properties":{         
@@ -265,11 +347,9 @@
                "description": "Array of possible daylist"
             },
             "time_list":{
-               "type": "array",
-               "items": {
-                    "$ref": "#\/definitions\/Schedule.list.timelist"
-               },
-               "description": "Array of possible callback time list. Keys are days and values are time list values"
+               "type": "object",
+               "$ref": "#\/definitions\/Schedule.timelistdays",
+               "description": "List object"               
             },
             "today":{
                "type":"number",
